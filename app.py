@@ -162,7 +162,7 @@ def update(item):
         p = TodoItem.query.filter_by(description = item).first()
         p.priority = new_priority
         db.session.commit()
-        flash("Updated rating of " + p.description)
+        flash("Updated priority of " + p.description)
         return redirect(url_for('all_lists'))
     return render_template('update_item.html',item = item, form = form)
 
